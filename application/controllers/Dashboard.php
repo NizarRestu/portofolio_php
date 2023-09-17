@@ -8,9 +8,9 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         $this->load->model('m_model');
         $this->load->helper('my_helper');
-        if ($this->session->userdata('logged_in') != true) {
-            redirect(base_url().'auth');
-        }
+        // if ($this->session->userdata('logged_in') != true) {
+        //     redirect(base_url().'auth');
+        // }
     }
 
 	public function index()

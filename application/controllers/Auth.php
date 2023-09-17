@@ -10,7 +10,7 @@ class Auth extends CI_Controller {
 		$this->load->helper('my_helper');
     }
 
-	public function index()
+	public function login()
 	{
 		$this->load->view('auth/login');
 	}
