@@ -98,7 +98,6 @@
         display: block !important;
       }
       body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
@@ -135,7 +134,7 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
+  <body class="d-flex h-100 text-center ">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -157,10 +156,10 @@
   <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0">SIS</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="<?php echo base_url()?>">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="<?php echo base_url('auth/login')?>">Login</a>
-        <a class="nav-link fw-bold py-1 px-0" href="<?php echo base_url('auth/register')?>">Register</a>
+      <nav class="nav nav-masthead justify-content-center float-md-end ">
+        <a class="nav-link fw-bold py-1 px-0 active text-black" aria-current="page" href="<?php echo base_url()?>">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 text-dark" href="<?php echo base_url('auth/login')?>">Login</a>
+        <a class="nav-link fw-bold py-1 px-0 text-dark" href="<?php echo base_url('auth/register')?>">Register</a>
       </nav>
     </div>
   </header>
@@ -169,7 +168,7 @@
     <h1>Webiste Sistem Informasi Sekolah</h1>
     <p class="lead">Sebuah Website yang berfungsi untuk mengelola data data informasi di sebuah sekolah. Website ini di buat menggunakan bahasa pemograman PHP</p>
     <p class="lead">
-      <a href="<?php echo base_url('auth/login')?>" class="btn btn-lg btn-light fw-bold border-white bg-white">Login</a>
+      <a href="<?php echo base_url('auth/login')?>" class="btn btn-lg btn-dark fw-bold border-white bg-dark">Login</a>
     </p>
   </main>
 
