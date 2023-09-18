@@ -9,7 +9,7 @@ class Siswa extends CI_Controller {
         $this->load->model('m_model');
         $this->load->helper('my_helper');
         if ($this->session->userdata('logged_in') != true) {
-            redirect(base_url().'auth');
+            redirect(base_url().'auth/login');
         }
     }
 
