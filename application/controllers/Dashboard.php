@@ -15,7 +15,11 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('page/dashboard');
+        $data['siswa'] = $this-> m_model->get_data('siswa')->num_rows();
+        $data['kelas'] = $this-> m_model->get_data('kelas')->num_rows();
+        $data['guru'] = $this-> m_model->get_data('guru')->num_rows();
+        $data['mapel'] = $this-> m_model->get_data('mapel')->num_rows();
+		$this->load->view('page/dashboard', $data);
 	}
 
 }

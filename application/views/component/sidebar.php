@@ -190,6 +190,18 @@ main {
           Guru
         </a>
       </li>
+      <li>
+        <a  href="<?php echo base_url('kelas')?>" class="nav-link text-white">
+        <i class="fa-solid fa-school"></i>
+          Kelas
+        </a>
+      </li>
+      <li>
+        <a  href="<?php echo base_url('mapel')?>" class="nav-link text-white">
+        <i class="fa-solid fa-book"></i>
+          Mapel
+        </a>
+      </li>
     </ul>
     <hr>
     <div class="dropdown">

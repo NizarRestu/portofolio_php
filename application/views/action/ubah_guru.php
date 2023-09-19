@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubah Siswa</title>
+    <title>Ubah Guru</title>
     <style>
         .m{
             margin-top: 10%;
@@ -29,7 +29,7 @@
                 <input type="text" class="form-control" id="nisn" name="nik" value="<?php echo $row->nik ?>">
             </div>          
             <div class="mb-3 col-6">
-                <label for="kelas" class="form-label">mapel</label>
+                <label for="kelas" class="form-label">Mapel</label>
                 <select name="id_mapel" class="form-select">
                     <option value="<?php echo $row->id_mapel ?>"><?php echo tampil_full_mapel_byid($row->id_mapel)?></option>
                     <?php foreach ($mapel as $row): ?>
