@@ -98,7 +98,7 @@
       html,
 body {
   height: 100%;
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .2);
 }
 .form-signin {
   max-width: 330px;

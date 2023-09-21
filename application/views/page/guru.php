@@ -54,6 +54,7 @@
      showCancelButton: true,
      confirmButtonColor: '#3085d6',
      cancelButtonColor: '#d33',
+     cancelButtonText: 'Batal',
      confirmButtonText: 'Ya, hapus!'
     }).then((result) => {
    if (result.isConfirmed) {
