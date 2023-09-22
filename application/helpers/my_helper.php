@@ -39,3 +39,13 @@ function tampil_full_sekolah_byid($id)
         return $stmt;
     }
 }
+function tampil_full_gambar_byid($id)
+{
+    $ci = &get_instance();
+    $ci -> load->database();
+    $result = $ci->db->where('id', $id)->get('admin');
+    foreach ($result->result() as $c) {
+        $stmt = $c->foto_profile;
+        return $stmt;
+    }
+}

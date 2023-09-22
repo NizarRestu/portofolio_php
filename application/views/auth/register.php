@@ -151,7 +151,7 @@ body {
                         method="post">
                         <h1 class="h3 mb-3 fw-normal">Form Register</h1>
                                     <?php
-                                    if ($this->session->userdata('message_email') == true) {
+                                    if ($this->session->flashdata('message_email') == true) {
                                     ?>
                                         <div class="alert alert-danger" role="alert">
                                             <?php echo "Alamat Email Sudah Digunakan." ?>
@@ -168,8 +168,9 @@ body {
       <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
       <label for="floatingPassword">Password</label>
+      <input type="checkbox" id="showPassword"> Lihat Password
     </div>
 
     <div class="form-check text-start my-3">
@@ -180,5 +181,17 @@ body {
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordInput = document.getElementById('password');
+
+        showPasswordCheckbox.addEventListener('change', function () {
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+    </script>
     </body>
 </html>

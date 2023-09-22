@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <title>Login</title>
+    <title>Ubah Password</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
@@ -98,8 +98,9 @@
       html,
 body {
   height: 100%;
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .2);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .2);            
 }
+
 .form-signin {
   max-width: 330px;
   padding: 1rem;
@@ -122,8 +123,9 @@ body {
 }
     </style>
 
-<script src="sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="sign-in.css" rel="stylesheet">
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary" >
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -143,33 +145,43 @@ body {
     </svg>
 
 
-    
+
 <main class="form-signin w-100 m-auto">
-  <form action="<?php echo base_url();?>Auth/aksi_login" method="post">
-    <h1 class="h3 mb-3 fw-normal">Form Login</h1>
-    <?php
-                                    if ($this->session->flashdata('error') == true) {
+  <form  action="<?php echo base_url('profile/aksi_ubah_password') ?>" enctype="multipart/form-data"
+                        method="post">
+                        <h1 class="h3 mb-3 fw-normal">Ubah Password</h1> 
+                        <?php
+                                    if ($this->session->flashdata('password_lama') == true) {
                                     ?>
                                         <div class="alert alert-danger" role="alert">
-                                            <?php echo "Email atau password tidak ditemukan" ?>
+                                            <?php echo "Password Tidak sama dengan password yang lama" ?>
                                         </div>
                                     <?php
                                     }
-                                    ?>  
+                                    ?>                      
+                        <?php
+                                    if ($this->session->flashdata('password_baru') == true) {
+                                    ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?php echo "Password Tidak sama" ?>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>                      
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
-      <label for="floatingInput">Alamat email</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" name="password_lama" >
+      <label for="floatingPassword">Password Lama</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-      <label for="floatingPassword">Password</label>
+    <input type="password" class="form-control" id="password2" placeholder="Password" name="password_baru" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
+      <label for="floatingPassword">Password Baru</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="password3" placeholder="Password" name="password_baru2" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
+      <label for="floatingPassword">Password Baru Lagi</label>
       <input type="checkbox" id="showPassword"> Lihat Password
     </div>
-
-    <div class="form-check text-start my-3">
-      <p>Tidak punya akun? Silahkan <a href="<?php echo base_url('auth/register')?>">Register</a></p>
-    </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+    <button class="btn btn-primary w-100 py-2" type="submit">Ubah</button>
   </form>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -177,12 +189,18 @@ body {
 <script>
         const showPasswordCheckbox = document.getElementById('showPassword');
         const passwordInput = document.getElementById('password');
+        const passwordInput2 = document.getElementById('password2');
+        const passwordInput3 = document.getElementById('password3');
 
         showPasswordCheckbox.addEventListener('change', function () {
             if (showPasswordCheckbox.checked) {
                 passwordInput.type = 'text';
+                passwordInput2.type = 'text';
+                passwordInput3.type = 'text';
             } else {
                 passwordInput.type = 'password';
+                passwordInput2.type = 'password';
+                passwordInput3.type = 'password';
             }
         });
     </script>

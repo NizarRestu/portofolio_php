@@ -25,15 +25,17 @@ CREATE TABLE `admin` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `foto_profile` mediumblob DEFAULT NULL,
+  `no_telepon` varchar(255) DEFAULT NULL,
+  `deskripsi` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `admin` */
 
-insert  into `admin`(`id`,`username`,`email`,`password`) values 
-(1,'NizarRestu','nizar@gmail.com','bf93e5f003e40c3fba44e512aecd3cdc'),
-(2,'user','user@gmail.com','45658e41bffc709f42e085d3ca94c766'),
-(3,'Nizar Restu Aji','anjay@gmail.com','45658e41bffc709f42e085d3ca94c766');
+insert  into `admin`(`id`,`username`,`email`,`password`,`foto_profile`,`no_telepon`,`deskripsi`) values 
+(1,'NizarRestu','nizar@gmail.com','45658e41bffc709f42e085d3ca94c766',NULL,'12345678901','Hallo Nama Saya Nizar'),
+(2,'user','user@gmail.com','45658e41bffc709f42e085d3ca94c766',NULL,NULL,NULL);
 
 /*Table structure for table `alokasi_mapel` */
 
@@ -89,10 +91,10 @@ CREATE TABLE `kelas` (
   `id_walikelas` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_sekolah` (`id_sekolah`),
-  KEY `id_walikelas` (`id_walikelas`),
+  KEY `kelas_ibfk_2` (`id_walikelas`),
   CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`id_sekolah`) REFERENCES `sekolah` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `kelas_ibfk_2` FOREIGN KEY (`id_walikelas`) REFERENCES `wali_kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `kelas_ibfk_2` FOREIGN KEY (`id_walikelas`) REFERENCES `guru` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `kelas` */
 
@@ -109,7 +111,7 @@ CREATE TABLE `mapel` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_mapel` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `mapel` */
 

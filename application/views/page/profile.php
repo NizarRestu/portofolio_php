@@ -19,9 +19,7 @@ body {
 .card {
     width: 350px;
     background-color: #efefef;
-    border: none;
-    cursor: pointer;
-    transition: all 0.5s;
+    height:50vh;
 }
 
 
@@ -39,10 +37,6 @@ body {
     font-size: 12px
 }
 
-.btn1 {
-    margin: 0 10px 0 -60px;
-}
-
 .text span {
     font-size: 13px;
     color: #545454;
@@ -55,11 +49,13 @@ body {
     </style>
 </head>
 <body>
+    <main class="d-flex flex-nowrap">
+    <!-- <?php $this->load->view('component/sidebar')?> -->
 <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
     <div class="card p-4">
         <div class=" image d-flex flex-column justify-content-center align-items-center">
         <?php foreach ($admin as $row): ?>
-           <button class="border border-0"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <button class="border border-0 btn btn-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">
            <?php if (!empty($row-> foto_profile)): ?>
             <img class="rounded-circle"  height="150" width="150" src="<?php echo base64_decode($row->foto_profile);?>">
             <?php else: ?>
@@ -68,12 +64,13 @@ body {
             </button>
 
                 <span class="name mt-3"><?php echo $row->username ?></span> <span class="idd"><?php echo $row->email ?></span>
-                <div class="d-flex flex-row justify-content-center align-items-center mt-3">
+                <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                <span class="idd1"><?php echo $row->no_telepon ?></span>
                    </div>
 
-                <div class="text mt-3"> <span><?php echo $row->deskripsi ?> </span> </div> <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span>
-                <div class=" d-flex mt-2"> <button class="btn btn-dark btn1">Edit Password</button>
-                    <button class="btn btn-dark">Edit Profile</button>
+                <div class="text mt-3"> <span><?php echo $row->deskripsi ?> </span> </div>
+                <div class=" d-flex mt-2 gap-2"> <a href="<?php echo base_url('profile/ubah_password/').$this->session->userdata('id')?>" class="btn btn-dark btn">Ubah Password</a>
+                    <button class="btn btn-dark">Ubah Profile</button>
                 </div>
              </div>
             </div>
@@ -96,10 +93,13 @@ body {
                 <input class="form-control" type="file" name="userfile" id="userfile" accept="image/*">
             </div>
             <div class="col-12 text-end">
-                <input type="submit" class="btn btn-primary px-3" name="submit" value="Upload Gambar"></input>
+                <input type="submit" class="btn btn-primary px-3" name="submit" value="Ubah Foto"></input>
             </div>
         </form>
     </div>
+    <div class="modal-footer">
+        <a  class="btn btn-danger" href="<?php echo base_url('Profile/hapus_image'); ?>">Hapus Foto</a>
+      </div>
     </div>
   </div>
 </div>

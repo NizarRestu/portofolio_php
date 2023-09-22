@@ -45,10 +45,7 @@ class Auth extends CI_Controller
                 redirect(base_url('auth/login'));
             }
         } else {
-            $data = [
-                'message_email' => true,
-            ];
-            $this->session->set_userdata($data);
+            $this->session->set_flashdata('message_email' , 'gagal...');
             redirect(base_url('auth/register'));
         }
 
@@ -71,6 +68,7 @@ class Auth extends CI_Controller
             $this->session->set_userdata($data);
                 redirect(base_url() . "dashboard");
         } else {
+            $this->session->set_flashdata('error' , 'error ');
             redirect(base_url() . "auth/login");
         }
     }

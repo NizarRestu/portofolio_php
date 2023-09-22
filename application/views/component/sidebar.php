@@ -206,8 +206,8 @@ main {
     <hr>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      <?php if (!empty($row->foto_profile)): ?>
-            <img width="32" height="32" class="rounded-circle me-2" src="<?php echo base64_decode($row->foto_profile);?>">
+      <?php if (!empty(tampil_full_gambar_byid($this->session->userdata('id')))): ?>
+            <img width="32" height="32" class="rounded-circle me-2" src="<?php echo base64_decode(tampil_full_gambar_byid($this->session->userdata('id')));?>">
             <?php else: ?>
               <img src="https://slabsoft.com/wp-content/uploads/2022/05/pp-wa-kosong-default.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
                 <?php endif;?>
