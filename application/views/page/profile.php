@@ -70,7 +70,7 @@ body {
 
                 <div class="text mt-3"> <span><?php echo $row->deskripsi ?> </span> </div>
                 <div class=" d-flex mt-2 gap-2"> <a href="<?php echo base_url('profile/ubah_password/').$this->session->userdata('id')?>" class="btn btn-dark btn">Ubah Password</a>
-                    <button class="btn btn-dark">Ubah Profile</button>
+                    
                 </div>
              </div>
             </div>
