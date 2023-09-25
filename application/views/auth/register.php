@@ -168,7 +168,7 @@ body {
       <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="password" placeholder="Password" name="password" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Karakter">
       <label for="floatingPassword">Password</label>
       <input type="checkbox" id="showPassword"> Lihat Password
     </div>

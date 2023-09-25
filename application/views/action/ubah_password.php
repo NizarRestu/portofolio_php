@@ -173,11 +173,11 @@ body {
       <label for="floatingPassword">Password Lama</label>
     </div>
     <div class="form-floating">
-    <input type="password" class="form-control" id="password2" placeholder="Password" name="password_baru" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
+    <input type="password" class="form-control" id="password2" placeholder="Password" name="password_baru" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Karakter">
       <label for="floatingPassword">Password Baru</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="password3" placeholder="Password" name="password_baru2" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Huruf">
+      <input type="password" class="form-control" id="password3" placeholder="Password" name="password_baru2" required pattern="(?=.*\d).{8,}" title="Password Minimal 8 Karakter">
       <label for="floatingPassword">Password Baru Lagi</label>
       <input type="checkbox" id="showPassword"> Lihat Password
     </div>

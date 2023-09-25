@@ -31,7 +31,7 @@ class Auth extends CI_Controller
         $query = $this->m_model->getwhere('admin', $data);
         $result = $query->row_array();
         if (empty($result)) {
-            if (strlen($password) < 8) {
+            if (strlen($password) <= 8) {
                 redirect(base_url('auth/register'));
             } else {
                 $data = [
